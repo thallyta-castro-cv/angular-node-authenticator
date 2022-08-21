@@ -1,0 +1,52 @@
+<mat-toolbar color="primary">
+  <span fxFlex>Estoque de produtos</span>
+
+    <ng-container *ngIf="!(authenticated$ | async)">
+      <button
+        mat-button
+        routerLink="/auth/login">
+        <mat-icon>input</mat-icon>
+        <span>&nbsp;Sign In</span>
+      </button>
+
+      <button
+        mat-button
+        routerLink="/auth/register">
+        <mat-icon>person-add</mat-icon>
+        <span>&nbsp;Sign up</span>
+      </button>
+    </ng-container>
+
+    <ng-container *ngIf="(authenticated$ | async) && (user$ | async)">
+      <button
+        mat-button
+        routerLink="/features/people">
+        <mat-icon>home</mat-icon>
+      </button>
+
+      <button
+        mat-button
+        routerLink="/features/products">
+        <mat-icon>shop</mat-icon>
+      </button>
+
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+      <button mat-icon-button (click)="logout()">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+
+      <mat-menu #menu="matMenu">
+        <p class="username">{{(user$ | async)?.email}}</p>
+        <mat-divider></mat-divider>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon color="primary">exit_to_app</mat-icon>
+          Exit
+        </button>
+      </mat-menu>
+  </ng-container>
+</mat-toolbar>
+
+<router-outlet></router-outlet>
