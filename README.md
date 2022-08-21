@@ -5,7 +5,7 @@
 # Sobre o projeto
 
 Este projeto consiste em uma aplicação fullstack com Angular e NodeJs e banco de dados Mongodb com autenticação baseada em token e funcionalidades para se 
-cadastrar no sistema e retornar dados de usuários cadatrados e produtos cadastrados em uma tabela no frontend.
+cadastrar no sistema e retornar dados de usuários cadastrados e produtos cadastrados em uma tabela no frontend.
 
 ![Login](login.png)
 ![Register](register.png)
