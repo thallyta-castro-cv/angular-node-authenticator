@@ -49,10 +49,11 @@ Para iniciar a aplicação execute o seguinte comando no terminal dentro da past
 ```shell script
 node app.js
 ```
-Execute os seguintes comandos para gerar os dados com faker na pasta backend
+Execute os seguintes comandos para gerar os dados com faker na pasta utils do backend
 
 ```shell script
-node app.js
+node gen_people.js
+node gen_products.js
 ```
 
 # Autor
